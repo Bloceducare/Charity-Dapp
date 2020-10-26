@@ -1,0 +1,229 @@
+{
+  "contractName": "votingInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "get",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.0;\n\ninterface votingInterface {\n    function get() external returns (uint);\n}",
+  "sourcePath": "/home/null/Documents/VoteDapp/contracts/interfaces/votingInterface.sol",
+  "ast": {
+    "absolutePath": "/home/null/Documents/VoteDapp/contracts/interfaces/votingInterface.sol",
+    "exportedSymbols": {
+      "votingInterface": [
+        5991
+      ]
+    },
+    "id": 5992,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5985,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:15"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5991,
+        "linearizedBaseContracts": [
+          5991
+        ],
+        "name": "votingInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5990,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5986,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "69:2:15"
+            },
+            "returnParameters": {
+              "id": 5989,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5988,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5990,
+                  "src": "90:4:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5987,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "90:4:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "89:6:15"
+            },
+            "scope": 5991,
+            "src": "57:39:15",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5992,
+        "src": "25:73:15"
+      }
+    ],
+    "src": "0:98:15"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/null/Documents/VoteDapp/contracts/interfaces/votingInterface.sol",
+    "exportedSymbols": {
+      "votingInterface": [
+        5991
+      ]
+    },
+    "id": 5992,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5985,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:15"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5991,
+        "linearizedBaseContracts": [
+          5991
+        ],
+        "name": "votingInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5990,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5986,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "69:2:15"
+            },
+            "returnParameters": {
+              "id": 5989,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5988,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5990,
+                  "src": "90:4:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5987,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "90:4:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "89:6:15"
+            },
+            "scope": 5991,
+            "src": "57:39:15",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5992,
+        "src": "25:73:15"
+      }
+    ],
+    "src": "0:98:15"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.2+commit.1df8f40c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-10-03T19:56:46.051Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

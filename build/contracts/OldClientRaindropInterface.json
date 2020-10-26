@@ -1,0 +1,532 @@
+{
+  "contractName": "OldClientRaindropInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "userName",
+          "type": "string"
+        }
+      ],
+      "name": "userNameTaken",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "userName",
+          "type": "string"
+        }
+      ],
+      "name": "getUserByName",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"userName\",\"type\":\"string\"}],\"name\":\"getUserByName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"userName\",\"type\":\"string\"}],\"name\":\"userNameTaken\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/null/Documents/VoteDapp/contracts/resolvers/ClientRaindrop/OldClientRaindropInterface.sol\":\"OldClientRaindropInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/null/Documents/VoteDapp/contracts/resolvers/ClientRaindrop/OldClientRaindropInterface.sol\":{\"keccak256\":\"0xd72adcdfc2bfdb550c187338edb8700ea6daa19e5f7a71d94088f96071ef5d6d\",\"urls\":[\"bzz-raw://a19591ec643244124e117f04fde12eefd2d5ba6ae1b898105a3a2a9f460307d6\",\"dweb:/ipfs/QmRLuWgTCiUf44cMyxEabD8LNtgARLs16B3PUu4YQ8sYH7\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.0;\n\ninterface OldClientRaindropInterface {\n    function userNameTaken(string calldata userName) external view returns (bool);\n    function getUserByName(string calldata userName) external view returns (string memory, address);\n}",
+  "sourcePath": "/home/null/Documents/VoteDapp/contracts/resolvers/ClientRaindrop/OldClientRaindropInterface.sol",
+  "ast": {
+    "absolutePath": "/home/null/Documents/VoteDapp/contracts/resolvers/ClientRaindrop/OldClientRaindropInterface.sol",
+    "exportedSymbols": {
+      "OldClientRaindropInterface": [
+        6712
+      ]
+    },
+    "id": 6713,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6695,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:16"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6712,
+        "linearizedBaseContracts": [
+          6712
+        ],
+        "name": "OldClientRaindropInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6702,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "userNameTaken",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6698,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6697,
+                  "name": "userName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6702,
+                  "src": "91:24:16",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6696,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "91:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "90:26:16"
+            },
+            "returnParameters": {
+              "id": 6701,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6700,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6702,
+                  "src": "140:4:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6699,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "140:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "139:6:16"
+            },
+            "scope": 6712,
+            "src": "68:78:16",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6711,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getUserByName",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6705,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6704,
+                  "name": "userName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6711,
+                  "src": "174:24:16",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6703,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "174:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "173:26:16"
+            },
+            "returnParameters": {
+              "id": 6710,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6707,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6711,
+                  "src": "223:13:16",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6706,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "223:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6709,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6711,
+                  "src": "238:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6708,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "238:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "222:24:16"
+            },
+            "scope": 6712,
+            "src": "151:96:16",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6713,
+        "src": "25:224:16"
+      }
+    ],
+    "src": "0:249:16"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/null/Documents/VoteDapp/contracts/resolvers/ClientRaindrop/OldClientRaindropInterface.sol",
+    "exportedSymbols": {
+      "OldClientRaindropInterface": [
+        6712
+      ]
+    },
+    "id": 6713,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6695,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:16"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6712,
+        "linearizedBaseContracts": [
+          6712
+        ],
+        "name": "OldClientRaindropInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6702,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "userNameTaken",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6698,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6697,
+                  "name": "userName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6702,
+                  "src": "91:24:16",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6696,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "91:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "90:26:16"
+            },
+            "returnParameters": {
+              "id": 6701,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6700,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6702,
+                  "src": "140:4:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6699,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "140:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "139:6:16"
+            },
+            "scope": 6712,
+            "src": "68:78:16",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6711,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getUserByName",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6705,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6704,
+                  "name": "userName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6711,
+                  "src": "174:24:16",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6703,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "174:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "173:26:16"
+            },
+            "returnParameters": {
+              "id": 6710,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6707,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6711,
+                  "src": "223:13:16",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6706,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "223:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6709,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6711,
+                  "src": "238:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6708,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "238:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "222:24:16"
+            },
+            "scope": 6712,
+            "src": "151:96:16",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6713,
+        "src": "25:224:16"
+      }
+    ],
+    "src": "0:249:16"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-10-03T12:02:50.287Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
