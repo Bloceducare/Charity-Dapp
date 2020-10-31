@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.5.17+commit.d19bba13"
+		"version": "0.5.12+commit.7709ece9"
 	},
 	"language": "Solidity",
 	"output": {
@@ -18,7 +18,7 @@
 		"compilationTarget": {
 			"localhost/contracts/zeppelin/math/SafeMath.sol": "SafeMath"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "petersburg",
 		"libraries": {},
 		"optimizer": {
 			"enabled": false,

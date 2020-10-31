@@ -1,72 +1,4 @@
 
-// File: contracts/zeppelin/math/SafeMath.sol
-
-pragma solidity ^0.5.0;
-
-/**
-* @title SafeMath
-* @dev Math operations with safety checks that revert on error
-*/
-library SafeMath {
-
-    /**
-    * @dev Multiplies two numbers, reverts on overflow.
-    */
-    function mul(uint256 a, uint256 b) internal pure returns (uint256) {
-        // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
-        // benefit is lost if 'b' is also tested.
-        // See: https://github.com/OpenZeppelin/openzeppelin-solidity/pull/522
-        if (a == 0) {
-            return 0;
-        }
-
-        uint256 c = a * b;
-        require(c / a == b);
-
-        return c;
-    }
-
-    /**
-    * @dev Integer division of two numbers truncating the quotient, reverts on division by zero.
-    */
-    function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b > 0); // Solidity only automatically asserts when dividing by 0
-        uint256 c = a / b;
-        // assert(a == b * c + a % b); // There is no case in which this doesn't hold
-
-        return c;
-    }
-
-    /**
-    * @dev Subtracts two numbers, reverts on overflow (i.e. if subtrahend is greater than minuend).
-    */
-    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b <= a);
-        uint256 c = a - b;
-
-        return c;
-    }
-
-    /**
-    * @dev Adds two numbers, reverts on overflow.
-    */
-    function add(uint256 a, uint256 b) internal pure returns (uint256) {
-        uint256 c = a + b;
-        require(c >= a);
-
-        return c;
-    }
-
-    /**
-    * @dev Divides two numbers and returns the remainder (unsigned integer modulo),
-    * reverts when dividing by zero.
-    */
-    function mod(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b != 0);
-        return a % b;
-    }
-}
-
 // File: contracts/zeppelin/ownership/Ownable.sol
 
 pragma solidity ^0.5.0;
@@ -378,6 +310,74 @@ interface IdentityRegistryInterface {
     ) external;
 }
 
+// File: contracts/zeppelin/math/SafeMath.sol
+
+pragma solidity ^0.5.0;
+
+/**
+* @title SafeMath
+* @dev Math operations with safety checks that revert on error
+*/
+library SafeMath {
+
+    /**
+    * @dev Multiplies two numbers, reverts on overflow.
+    */
+    function mul(uint256 a, uint256 b) internal pure returns (uint256) {
+        // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
+        // benefit is lost if 'b' is also tested.
+        // See: https://github.com/OpenZeppelin/openzeppelin-solidity/pull/522
+        if (a == 0) {
+            return 0;
+        }
+
+        uint256 c = a * b;
+        require(c / a == b);
+
+        return c;
+    }
+
+    /**
+    * @dev Integer division of two numbers truncating the quotient, reverts on division by zero.
+    */
+    function div(uint256 a, uint256 b) internal pure returns (uint256) {
+        require(b > 0); // Solidity only automatically asserts when dividing by 0
+        uint256 c = a / b;
+        // assert(a == b * c + a % b); // There is no case in which this doesn't hold
+
+        return c;
+    }
+
+    /**
+    * @dev Subtracts two numbers, reverts on overflow (i.e. if subtrahend is greater than minuend).
+    */
+    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+        require(b <= a);
+        uint256 c = a - b;
+
+        return c;
+    }
+
+    /**
+    * @dev Adds two numbers, reverts on overflow.
+    */
+    function add(uint256 a, uint256 b) internal pure returns (uint256) {
+        uint256 c = a + b;
+        require(c >= a);
+
+        return c;
+    }
+
+    /**
+    * @dev Divides two numbers and returns the remainder (unsigned integer modulo),
+    * reverts when dividing by zero.
+    */
+    function mod(uint256 a, uint256 b) internal pure returns (uint256) {
+        require(b != 0);
+        return a % b;
+    }
+}
+
 // File: contracts/resolvers/Charity.sol
 
 pragma solidity ^0.5.0;
@@ -402,8 +402,6 @@ pragma solidity ^0.5.0;
      
      //State variables
      
-     //creator of a charity 
-     uint public creator;
      
      //max amount to be raised,refunds excess back to donators
      uint256 public charityGoal;
@@ -427,6 +425,8 @@ pragma solidity ^0.5.0;
     //overlord address
     address public overlord=0xF3a57FAbea6e198403864640061E3abc168cee80;
     
+    //the only address that can withdraw the funds...should be set by the charity owner
+    address public charityOwnerAddress;
     
     
     
@@ -463,11 +463,7 @@ pragma solidity ^0.5.0;
          _;
      }
      
-     //confirm that the caller is project creator
-     modifier isCreator(){
-         require(checkEIN(msg.sender)== creator);
-         _;
-     }
+
      
      //checks if the ein has this contract as a resolver
      modifier isParticipant(address _target){
@@ -498,16 +494,21 @@ modifier onlyOverlord{
     require (msg.sender==overlord,"You are not the charity overlord");
     _;
 }
-     constructor (
+
+modifier onlyCharityOwner{
+    require (msg.sender==charityOwnerAddress,"You are not the charity owner");
+    _;
+}
+    constructor (
          address snowflakeAddress,
          string memory projectTitle,
          string memory projectDesc,
          uint charityEnd,
-         uint goalAmount) HasEIN(msg.sender) SnowflakeResolver(projectTitle, projectDesc, snowflakeAddress, true, false) public {
+         uint goalAmount,
+         address _owner) SnowflakeResolver(projectTitle, projectDesc, snowflakeAddress, true, false) public {
              snowflakeAddress=_snowflakeAddress;
-             creator = checkEIN(msg.sender);
+             charityOwnerAddress=_owner;
              title= projectTitle;
-             _creatorAddress=msg.sender;
              description= projectDesc;
              charityGoal = convertToRealAmount(goalAmount);
              raiseBy = now.add(charityEnd).mul(1 days);
@@ -556,7 +557,7 @@ function onAddition(uint ein,uint /**allocation**/,bytes memory) public senderIs
 function onRemoval(uint, bytes memory) public senderIsSnowflake() returns (bool) {}
  
          //main withdraw function that can be called anytime will send all funds from the contract
-     function withdrawContributions(address to) public onlyOwner {
+     function withdrawContributions(address to) public onlyCharityOwner {
         SnowflakeInterface snowfl = SnowflakeInterface(snowflakeAddress);
         HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
         withdrawHydroBalanceTo(to, hydro.balanceOf(address(this)));
@@ -566,7 +567,7 @@ function onRemoval(uint, bytes memory) public senderIsSnowflake() returns (bool)
      
      //function to allow registered participants contribute to a charity
       function contribute(uint _amount) public inState(State.Approved) notExpired() isParticipant(msg.sender) {
-          require(checkEIN(msg.sender) !=creator,"you cannot donate to your own Charity");
+          require(checkEIN(msg.sender) !=checkEIN(charityOwnerAddress),"you cannot donate to your own Charity");
           uint _realAmount= convertToRealAmount(_amount);
             SnowflakeInterface snowfl = SnowflakeInterface(snowflakeAddress);
             uint ein=checkEIN(msg.sender);
@@ -598,7 +599,7 @@ function onRemoval(uint, bytes memory) public senderIsSnowflake() returns (bool)
      function checkIfCharityExpired() public view returns(bool){
          if(now>=raiseBy){
              return(true);
-             
+
          }
      }
          
@@ -612,14 +613,19 @@ function onRemoval(uint, bytes memory) public senderIsSnowflake() returns (bool)
          
          //check remaining time before project expiration
          //should be called when the project has not expired
-             function checkRemainingTime() public view notExpired() returns(uint)  {
+             function checkRemainingTime() public view  returns(uint)  {
                  if(now>=raiseBy){
              return 0;
                  }
                  else{
-             uint _time= now.sub(raiseBy);
+                     uint _real=now.mul(1 days);
+             uint _time= raiseBy.sub(_real);
              return(_time);
          }}
+         
+         function checkState() public view returns(State){
+             return state;
+         }
        
        
  }
@@ -629,46 +635,29 @@ function onRemoval(uint, bytes memory) public senderIsSnowflake() returns (bool)
 pragma solidity ^0.5.0;
 
 
-
-
 contract charityFactory {
-    using SafeMath for uint256;
-    
-Charity[] private charities;
 address snowflake;
-event charityStarted(
-    address contractAdd,
-    address charityOwner,
-    string title,
-    string description,
-    uint256 deadline,
-    uint256 maxAmount
-    
-    );
-    
-    constructor(address _snowflake) public {
-        snowflake=_snowflake;
-    }
-    
-function startCharity(
-    string memory _title,string memory _description,uint deadline,uint maxAmountToRaise) public returns(address) {
-        
-        Charity newCharity= new Charity(snowflake,_title,_description,deadline,maxAmountToRaise);
-        charities.push(newCharity);
-        emit charityStarted(
-            address(newCharity),
-            msg.sender,
-            _title,
-            _description,
-            deadline,
-            maxAmountToRaise
-            );
-            return address(newCharity);
-        
-        
-    }  
-    
-    function returnAllCharities() external view returns (Charity[] memory){
+
+Charity[] public charities;
+
+event newCharityCreated(
+    address indexed _deployedAddress
+);
+constructor(address _snowflake) public{
+    snowflake=_snowflake;
+}
+
+
+function createNewCharity(string memory _name,string memory _description,uint _days,uint _maxAmount,address _ownerAddress) public returns(address newContract){
+       Charity c = new Charity(snowflake,_name,_description,_days,_maxAmount,_ownerAddress);
+       charities.push(c);
+       emit newCharityCreated(address(c));
+        return address(c);
+    //returns the new election contract address
+
+}
+ function returnAllCharities() external view returns(Charity[] memory){
         return charities;
     }
+
 }

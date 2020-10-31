@@ -402,8 +402,6 @@ pragma solidity ^0.5.0;
      
      //State variables
      
-     //creator of a charity 
-     uint public creator;
      
      //max amount to be raised,refunds excess back to donators
      uint256 public charityGoal;
@@ -427,6 +425,8 @@ pragma solidity ^0.5.0;
     //overlord address
     address public overlord=0xF3a57FAbea6e198403864640061E3abc168cee80;
     
+    //the only address that can withdraw the funds...should be set by the charity owner
+    address public charityOwnerAddress;
     
     
     
@@ -463,11 +463,7 @@ pragma solidity ^0.5.0;
          _;
      }
      
-     //confirm that the caller is project creator
-     modifier isCreator(){
-         require(checkEIN(msg.sender)== creator);
-         _;
-     }
+
      
      //checks if the ein has this contract as a resolver
      modifier isParticipant(address _target){
@@ -498,16 +494,21 @@ modifier onlyOverlord{
     require (msg.sender==overlord,"You are not the charity overlord");
     _;
 }
-     constructor (
+
+modifier onlyCharityOwner{
+    require (msg.sender==charityOwnerAddress,"You are not the charity owner");
+    _;
+}
+    constructor (
          address snowflakeAddress,
          string memory projectTitle,
          string memory projectDesc,
          uint charityEnd,
-         uint goalAmount) HasEIN(msg.sender) SnowflakeResolver(projectTitle, projectDesc, snowflakeAddress, true, false) public {
+         uint goalAmount,
+         address _owner) SnowflakeResolver(projectTitle, projectDesc, snowflakeAddress, true, false) public {
              snowflakeAddress=_snowflakeAddress;
-             creator = checkEIN(msg.sender);
+             charityOwnerAddress=_owner;
              title= projectTitle;
-             _creatorAddress=msg.sender;
              description= projectDesc;
              charityGoal = convertToRealAmount(goalAmount);
              raiseBy = now.add(charityEnd).mul(1 days);
@@ -556,7 +557,7 @@ function onAddition(uint ein,uint /**allocation**/,bytes memory) public senderIs
 function onRemoval(uint, bytes memory) public senderIsSnowflake() returns (bool) {}
  
          //main withdraw function that can be called anytime will send all funds from the contract
-     function withdrawContributions(address to) public onlyOwner {
+     function withdrawContributions(address to) public onlyCharityOwner {
         SnowflakeInterface snowfl = SnowflakeInterface(snowflakeAddress);
         HydroInterface hydro = HydroInterface(snowfl.hydroTokenAddress());
         withdrawHydroBalanceTo(to, hydro.balanceOf(address(this)));
@@ -566,7 +567,7 @@ function onRemoval(uint, bytes memory) public senderIsSnowflake() returns (bool)
      
      //function to allow registered participants contribute to a charity
       function contribute(uint _amount) public inState(State.Approved) notExpired() isParticipant(msg.sender) {
-          require(checkEIN(msg.sender) !=creator,"you cannot donate to your own Charity");
+          require(checkEIN(msg.sender) !=checkEIN(charityOwnerAddress),"you cannot donate to your own Charity");
           uint _realAmount= convertToRealAmount(_amount);
             SnowflakeInterface snowfl = SnowflakeInterface(snowflakeAddress);
             uint ein=checkEIN(msg.sender);
@@ -598,7 +599,7 @@ function onRemoval(uint, bytes memory) public senderIsSnowflake() returns (bool)
      function checkIfCharityExpired() public view returns(bool){
          if(now>=raiseBy){
              return(true);
-             
+
          }
      }
          
@@ -612,14 +613,19 @@ function onRemoval(uint, bytes memory) public senderIsSnowflake() returns (bool)
          
          //check remaining time before project expiration
          //should be called when the project has not expired
-             function checkRemainingTime() public view notExpired() returns(uint)  {
+             function checkRemainingTime() public view  returns(uint)  {
                  if(now>=raiseBy){
              return 0;
                  }
                  else{
-             uint _time= now.sub(raiseBy);
+                     uint _real=now.mul(1 days);
+             uint _time= raiseBy.sub(_real);
              return(_time);
          }}
+         
+         function checkState() public view returns(State){
+             return state;
+         }
        
        
  }

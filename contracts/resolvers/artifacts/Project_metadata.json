@@ -31,11 +31,6 @@
 						"internalType": "uint256",
 						"name": "goalAmount",
 						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "_owner",
-						"type": "address"
 					}
 				],
 				"payable": false,
@@ -203,21 +198,6 @@
 			{
 				"constant": true,
 				"inputs": [],
-				"name": "charityOwnerAddress",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
 				"name": "checkIfCharityExpired",
 				"outputs": [
 					{
@@ -276,21 +256,6 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "checkState",
-				"outputs": [
-					{
-						"internalType": "enum Charity.State",
-						"name": "",
-						"type": "uint8"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"constant": false,
 				"inputs": [
 					{
@@ -336,6 +301,21 @@
 					}
 				],
 				"name": "contributions",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "creator",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -578,7 +558,7 @@
 				"name": "state",
 				"outputs": [
 					{
-						"internalType": "enum Charity.State",
+						"internalType": "enum Project.State",
 						"name": "",
 						"type": "uint8"
 					}
@@ -677,7 +657,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/resolvers/Charity.sol": "Charity"
+			"localhost/contracts/resolvers/Charity.sol": "Project"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -724,10 +704,10 @@
 			]
 		},
 		"localhost/contracts/resolvers/Charity.sol": {
-			"keccak256": "0xd683138f5832bb6288334fda1d68707d8127a57c9d5bd7d1a18337cfcc072f88",
+			"keccak256": "0x0572150979d269b3c340e998096d2b51061c9f190c40952db5aa06a8199919be",
 			"urls": [
-				"bzz-raw://6dbacf73fccf17e71c719328c47bdfc4512400ebf13ca0f8e907cb7eda3af0a7",
-				"dweb:/ipfs/QmawY2gEwFanhA89Jk2a95CaYysDsivdxj6DVC1Vt875Nj"
+				"bzz-raw://96ead3804861c5460c5a37198a212b922b74be1a4fa59c104c06dbe58195e465",
+				"dweb:/ipfs/QmRXevzmaSfb3XvjfVStBt7qUuEG5UV7493zyZmrqFCwe3"
 			]
 		},
 		"localhost/contracts/zeppelin/math/SafeMath.sol": {
