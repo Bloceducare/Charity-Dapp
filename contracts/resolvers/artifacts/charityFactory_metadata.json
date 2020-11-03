@@ -95,6 +95,21 @@
 			{
 				"constant": true,
 				"inputs": [],
+				"name": "globalOverlord",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
 				"name": "returnAllCharities",
 				"outputs": [
 					{
@@ -105,6 +120,21 @@
 				],
 				"payable": false,
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_newOverlord",
+						"type": "address"
+					}
+				],
+				"name": "transferOverlordAuthority",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -164,17 +194,17 @@
 			]
 		},
 		"localhost/contracts/resolvers/Charity.sol": {
-			"keccak256": "0xfdff967f96a6ee598f4e208f606bebd577dca1b4bc97728ecd61fa994f8b95f6",
+			"keccak256": "0xcf294405fe3c0495da75eb1b358eca4c735067ac8e4aae6f48d4e58a205f78f7",
 			"urls": [
-				"bzz-raw://a3ca56e50aecb936fc7b8f9bcc27909a06ef532da83dd49162eb0ca43a4a08a6",
-				"dweb:/ipfs/QmVyj2qqV9Ur7XWBrXp7WoFLgc6dDDKvsWNhDBewRA8R52"
+				"bzz-raw://ff0104fd6103177bfc62470ff63b82bcf414683964cd1b859edce4ba2c411215",
+				"dweb:/ipfs/QmU2HB9YSVhqY7W2BcpdkPXduWhmsZ7vxpVCd5TZ3zr5dC"
 			]
 		},
 		"localhost/contracts/resolvers/CharityFactory.sol": {
-			"keccak256": "0x0f7e555cf7669ad6ae3cfe0bde7024d8e26689f026ffd717eed9a53729bb7ab2",
+			"keccak256": "0xcd6ba148243948de34d4086cb6d2b8e6423b7cbc62778848e8e0e4c8c26e07c8",
 			"urls": [
-				"bzz-raw://49f4e61deb9e13c34996b2bb4b8741b5ed7019eff9a9ba92f76ce02ea128573c",
-				"dweb:/ipfs/QmbNDCwkKVckfZ36Bi1xBhoAXiTJpQxvfajHYDGMtp1tet"
+				"bzz-raw://77b89e5cc052e56eeb4af8c3f19b5ede5cc80b27f58da246b140456ed58f6f60",
+				"dweb:/ipfs/QmbcxqrmdFWvp7BNSdMgq166fbTr9kAaq4bFyU7mPEo2j8"
 			]
 		},
 		"localhost/contracts/zeppelin/math/SafeMath.sol": {

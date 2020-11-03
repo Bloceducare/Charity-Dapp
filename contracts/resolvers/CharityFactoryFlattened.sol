@@ -423,7 +423,7 @@ pragma solidity ^0.5.0;
     address _snowflakeAddress;
     
     //overlord address
-    address public overlord=0xF3a57FAbea6e198403864640061E3abc168cee80;
+    address public overlord;
     
     //the only address that can withdraw the funds...should be set by the charity owner
     address public charityOwnerAddress;
@@ -505,14 +505,16 @@ modifier onlyCharityOwner{
          string memory projectDesc,
          uint charityEnd,
          uint goalAmount,
-         address _owner) SnowflakeResolver(projectTitle, projectDesc, snowflakeAddress, true, false) public {
+         address _owner,
+         address _overlord) SnowflakeResolver(projectTitle, projectDesc, snowflakeAddress, true, false) public {
              snowflakeAddress=_snowflakeAddress;
              charityOwnerAddress=_owner;
              title= projectTitle;
              description= projectDesc;
              charityGoal = convertToRealAmount(goalAmount);
-             raiseBy = now.add(charityEnd).mul(1 days);
+            raiseBy= now+(charityEnd)*(1 days);
              currentBalance = 0;
+             overlord=_overlord;
          }
          
          function checkEIN(address _address) internal HasEIN(_address) returns(uint){
@@ -590,10 +592,7 @@ function onRemoval(uint, bytes memory) public senderIsSnowflake() returns (bool)
      }
      }
      
-     //function to transfer the overlord position to another address
-     function transferOverlordAuthority(address _newOverlord) public onlyOverlord {
-         overlord=_newOverlord;
-     }
+    
      
      //checks if the charity has expired
      function checkIfCharityExpired() public view returns(bool){
@@ -618,9 +617,7 @@ function onRemoval(uint, bytes memory) public senderIsSnowflake() returns (bool)
              return 0;
                  }
                  else{
-                     uint _real=now.mul(1 days);
-             uint _time= raiseBy.sub(_real);
-             return(_time);
+                     return raiseBy;
          }}
          
          function checkState() public view returns(State){
@@ -637,25 +634,43 @@ pragma solidity ^0.5.0;
 
 contract charityFactory {
 address snowflake;
+address public globalOverlord;
 
 Charity[] public charities;
 
 event newCharityCreated(
     address indexed _deployedAddress
 );
-constructor(address _snowflake) public{
-    snowflake=_snowflake;
+
+modifier onlyOverlord{
+    require (msg.sender==globalOverlord,"You are not the OVERLORD");
+    _;
 }
 
+constructor(address _snowflake) public{
+    snowflake=_snowflake;
+    
+    //sets the deployer of the factory contract as the overlord
+    globalOverlord=msg.sender;
+}
 
+//creates a new charity instance
 function createNewCharity(string memory _name,string memory _description,uint _days,uint _maxAmount,address _ownerAddress) public returns(address newContract){
-       Charity c = new Charity(snowflake,_name,_description,_days,_maxAmount,_ownerAddress);
+       Charity c = new Charity(snowflake,_name,_description,_days,_maxAmount,_ownerAddress,globalOverlord);
        charities.push(c);
        emit newCharityCreated(address(c));
         return address(c);
     //returns the new election contract address
 
 }
+
+ //function to transfer the overlord position to another address
+ //can only be called by the existing overlord
+     function transferOverlordAuthority(address _newOverlord) public onlyOverlord {
+        globalOverlord=_newOverlord;
+     }
+     
+     //returns the addresses of all charities that have all been deployed
  function returnAllCharities() external view returns(Charity[] memory){
         return charities;
     }

@@ -36,6 +36,11 @@
 						"internalType": "address",
 						"name": "_owner",
 						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_overlord",
+						"type": "address"
 					}
 				],
 				"payable": false,
@@ -607,21 +612,6 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_newOverlord",
-						"type": "address"
-					}
-				],
-				"name": "transferOverlordAuthority",
-				"outputs": [],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"internalType": "address",
 						"name": "newOwner",
 						"type": "address"
 					}
@@ -724,10 +714,10 @@
 			]
 		},
 		"localhost/contracts/resolvers/Charity.sol": {
-			"keccak256": "0xd683138f5832bb6288334fda1d68707d8127a57c9d5bd7d1a18337cfcc072f88",
+			"keccak256": "0xcf294405fe3c0495da75eb1b358eca4c735067ac8e4aae6f48d4e58a205f78f7",
 			"urls": [
-				"bzz-raw://6dbacf73fccf17e71c719328c47bdfc4512400ebf13ca0f8e907cb7eda3af0a7",
-				"dweb:/ipfs/QmawY2gEwFanhA89Jk2a95CaYysDsivdxj6DVC1Vt875Nj"
+				"bzz-raw://ff0104fd6103177bfc62470ff63b82bcf414683964cd1b859edce4ba2c411215",
+				"dweb:/ipfs/QmU2HB9YSVhqY7W2BcpdkPXduWhmsZ7vxpVCd5TZ3zr5dC"
 			]
 		},
 		"localhost/contracts/zeppelin/math/SafeMath.sol": {
