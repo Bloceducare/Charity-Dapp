@@ -68,14 +68,168 @@
 			"constant": false,
 			"inputs": [
 				{
+					"internalType": "address",
+					"name": "_dappAddress",
+					"type": "address"
+				}
+			],
+			"name": "_blackListDapp",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_dappAddress",
+					"type": "address"
+				}
+			],
+			"name": "_whiteListDapp",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_owner",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "_spender",
+					"type": "address"
+				}
+			],
+			"name": "allowance",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "remaining",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"name": "allowed",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_spender",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "_amount",
+					"type": "uint256"
+				}
+			],
+			"name": "approve",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "success",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_spender",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
 					"name": "_value",
 					"type": "uint256"
 				},
 				{
+					"internalType": "bytes",
+					"name": "_extraData",
+					"type": "bytes"
+				}
+			],
+			"name": "approveAndCall",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "success",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_value",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
 					"name": "_challenge",
 					"type": "uint256"
 				},
 				{
+					"internalType": "uint256",
 					"name": "_partnerId",
 					"type": "uint256"
 				}
@@ -88,147 +242,9 @@
 		},
 		{
 			"constant": true,
-			"inputs": [],
-			"name": "name",
-			"outputs": [
-				{
-					"name": "",
-					"type": "string"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": false,
 			"inputs": [
 				{
-					"name": "_spender",
-					"type": "address"
-				},
-				{
-					"name": "_amount",
-					"type": "uint256"
-				}
-			],
-			"name": "approve",
-			"outputs": [
-				{
-					"name": "success",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [],
-			"name": "totalSupply",
-			"outputs": [
-				{
-					"name": "",
-					"type": "uint256"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "_from",
-					"type": "address"
-				},
-				{
-					"name": "_to",
-					"type": "address"
-				},
-				{
-					"name": "_amount",
-					"type": "uint256"
-				}
-			],
-			"name": "transferFrom",
-			"outputs": [
-				{
-					"name": "success",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [
-				{
-					"name": "",
-					"type": "address"
-				}
-			],
-			"name": "balances",
-			"outputs": [
-				{
-					"name": "",
-					"type": "uint256"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "_dappAddress",
-					"type": "address"
-				}
-			],
-			"name": "_blackListDapp",
-			"outputs": [
-				{
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [
-				{
-					"name": "",
-					"type": "address"
-				},
-				{
-					"name": "",
-					"type": "address"
-				}
-			],
-			"name": "allowed",
-			"outputs": [
-				{
-					"name": "",
-					"type": "uint256"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [
-				{
+					"internalType": "address",
 					"name": "_owner",
 					"type": "address"
 				}
@@ -236,6 +252,7 @@
 			"name": "balanceOf",
 			"outputs": [
 				{
+					"internalType": "uint256",
 					"name": "balance",
 					"type": "uint256"
 				}
@@ -245,32 +262,20 @@
 			"type": "function"
 		},
 		{
-			"constant": false,
+			"constant": true,
 			"inputs": [
 				{
-					"name": "_newBurn",
-					"type": "uint256"
+					"internalType": "address",
+					"name": "",
+					"type": "address"
 				}
 			],
-			"name": "changeMaxBurn",
+			"name": "balances",
 			"outputs": [
 				{
+					"internalType": "uint256",
 					"name": "",
 					"type": "uint256"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [],
-			"name": "symbol",
-			"outputs": [
-				{
-					"name": "",
-					"type": "string"
 				}
 			],
 			"payable": false,
@@ -281,10 +286,12 @@
 			"constant": false,
 			"inputs": [
 				{
+					"internalType": "address",
 					"name": "_from",
 					"type": "address"
 				},
 				{
+					"internalType": "uint256",
 					"name": "_value",
 					"type": "uint256"
 				}
@@ -292,6 +299,7 @@
 			"name": "burn",
 			"outputs": [
 				{
+					"internalType": "uint256",
 					"name": "burnAmount",
 					"type": "uint256"
 				}
@@ -304,38 +312,17 @@
 			"constant": false,
 			"inputs": [
 				{
-					"name": "_to",
-					"type": "address"
-				},
-				{
-					"name": "_amount",
+					"internalType": "uint256",
+					"name": "_newBurn",
 					"type": "uint256"
 				}
 			],
-			"name": "transfer",
+			"name": "changeMaxBurn",
 			"outputs": [
 				{
-					"name": "success",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "_dappAddress",
-					"type": "address"
-				}
-			],
-			"name": "_whiteListDapp",
-			"outputs": [
-				{
+					"internalType": "uint256",
 					"name": "",
-					"type": "bool"
+					"type": "uint256"
 				}
 			],
 			"payable": false,
@@ -343,9 +330,25 @@
 			"type": "function"
 		},
 		{
+			"constant": true,
+			"inputs": [],
+			"name": "name",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
 			"constant": false,
 			"inputs": [
 				{
+					"internalType": "address",
 					"name": "_raindrop",
 					"type": "address"
 				}
@@ -357,24 +360,53 @@
 			"type": "function"
 		},
 		{
+			"constant": true,
+			"inputs": [],
+			"name": "symbol",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "totalSupply",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
 			"constant": false,
 			"inputs": [
 				{
-					"name": "_spender",
+					"internalType": "address",
+					"name": "_to",
 					"type": "address"
 				},
 				{
-					"name": "_value",
+					"internalType": "uint256",
+					"name": "_amount",
 					"type": "uint256"
-				},
-				{
-					"name": "_extraData",
-					"type": "bytes"
 				}
 			],
-			"name": "approveAndCall",
+			"name": "transfer",
 			"outputs": [
 				{
+					"internalType": "bool",
 					"name": "success",
 					"type": "bool"
 				}
@@ -384,26 +416,34 @@
 			"type": "function"
 		},
 		{
-			"constant": true,
+			"constant": false,
 			"inputs": [
 				{
-					"name": "_owner",
+					"internalType": "address",
+					"name": "_from",
 					"type": "address"
 				},
 				{
-					"name": "_spender",
+					"internalType": "address",
+					"name": "_to",
 					"type": "address"
-				}
-			],
-			"name": "allowance",
-			"outputs": [
+				},
 				{
-					"name": "remaining",
+					"internalType": "uint256",
+					"name": "_amount",
 					"type": "uint256"
 				}
 			],
+			"name": "transferFrom",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "success",
+					"type": "bool"
+				}
+			],
 			"payable": false,
-			"stateMutability": "view",
+			"stateMutability": "nonpayable",
 			"type": "function"
 		}
 	]

@@ -6,6 +6,48 @@
 	"output": {
 		"abi": [
 			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_dappAddress",
+						"type": "address"
+					}
+				],
+				"name": "_blackListDapp",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_dappAddress",
+						"type": "address"
+					}
+				],
+				"name": "_whiteListDapp",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"constant": true,
 				"inputs": [
 					{
@@ -182,6 +224,98 @@
 				"type": "function"
 			},
 			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "burnAmount",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_newBurn",
+						"type": "uint256"
+					}
+				],
+				"name": "changeMaxBurn",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_raindrop",
+						"type": "address"
+					}
+				],
+				"name": "setRaindropAddress",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"constant": true,
 				"inputs": [],
 				"name": "totalSupply",
@@ -263,22 +397,22 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/interfaces/HydroInterface.sol": "HydroInterface"
+			"localhost/../Charity/contracts/interfaces/HydroInterface.sol": "HydroInterface"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"localhost/contracts/interfaces/HydroInterface.sol": {
-			"keccak256": "0x3f0b755561062d9912aca9a46d728918404fe17a09cfbadfcdd498bdd6fd0b6e",
+		"localhost/../Charity/contracts/interfaces/HydroInterface.sol": {
+			"keccak256": "0xf7279bffebd5eb0d1bdc3500e8a12029ddc3249879061e677dc533eac3c8a8fc",
 			"urls": [
-				"bzz-raw://2c7728a242939831b961ce3846dcf948053a6d97e84d62d7de15fa04e050f4ed",
-				"dweb:/ipfs/QmTb87xRzJoTjn6Zqxwn4pobLaRwoKd5PTVXeJ79L59MSW"
+				"bzz-raw://4e0afb90c0e3c62d5ed48e63a010b868ffc142eaf01e772da657803daed61bf3",
+				"dweb:/ipfs/QmNpxvCMds25r1wEASuSDanMEKXKWiwJd3Fzoxi3rG2FJ2"
 			]
 		}
 	},

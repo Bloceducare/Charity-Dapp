@@ -667,7 +667,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/../Charity/contracts/resolvers/Charity.sol": "Charity"
+			"localhost/../Charity/contracts/resolvers/CharityFactoryFlattened.sol": "Charity"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -678,60 +678,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/../Charity/contracts/SnowflakeResolver.sol": {
-			"keccak256": "0x47767c5bf5606300e05d8a37ac8696101621cc182a608fcd5b44f7581904991f",
+		"localhost/../Charity/contracts/resolvers/CharityFactoryFlattened.sol": {
+			"keccak256": "0x769c097a5ee98ddece89a8cea57fff88be9ec7d81d2e8abc8bff1f63c3614e12",
 			"urls": [
-				"bzz-raw://772a6c8f6129ece514c7b22f1f923f068568bc54480a75e2ac441d87cc18d084",
-				"dweb:/ipfs/QmdVzXNzAaQbVfR2KNd41U6dV2XQnndJGoRM4wX5Rgcbah"
-			]
-		},
-		"localhost/../Charity/contracts/interfaces/HydroInterface.sol": {
-			"keccak256": "0xf7279bffebd5eb0d1bdc3500e8a12029ddc3249879061e677dc533eac3c8a8fc",
-			"urls": [
-				"bzz-raw://4e0afb90c0e3c62d5ed48e63a010b868ffc142eaf01e772da657803daed61bf3",
-				"dweb:/ipfs/QmNpxvCMds25r1wEASuSDanMEKXKWiwJd3Fzoxi3rG2FJ2"
-			]
-		},
-		"localhost/../Charity/contracts/interfaces/IdentityRegistryInterface.sol": {
-			"keccak256": "0xb559191dbd30da97a8b5759a895d7f4eff420eedc55b0786ae7206fbe384dc15",
-			"urls": [
-				"bzz-raw://4ca73a9731d9a2dd9603593b2d847af126e20af8d4242edb91d5bfba5107149d",
-				"dweb:/ipfs/QmdJ5oW52QuXipANPCy8sJPwULkdXmVWjAPEWgPoy9oudk"
-			]
-		},
-		"localhost/../Charity/contracts/interfaces/SnowflakeInterface.sol": {
-			"keccak256": "0x939a1e74fab994f6fd874077f8efbaeaa688ac19ea8a17e9f8797710cefdf611",
-			"urls": [
-				"bzz-raw://8733af7e6a36d482a9b33a6720ea656eb470eeea5946a1bd0bcc618e945bc0c5",
-				"dweb:/ipfs/QmdrHWJaEoTktAPn5pnGc6363wsXvgC8CZ5DZztMnTd5eZ"
-			]
-		},
-		"localhost/../Charity/contracts/interfaces/SnowflakeResolverInterface.sol": {
-			"keccak256": "0x8a5595a41d86f78514dfcd6eaa0ec79482187b8ead1c8c129faab29aeb2aced1",
-			"urls": [
-				"bzz-raw://adce9474a5bdaf71df2dd13b274be5e133aea40a45ac477cff3affa7b36c04f2",
-				"dweb:/ipfs/QmPPUi5d3uqA8dgLkJY6NUJZXNkV2gHCCbgtUXdb1Q42D4"
-			]
-		},
-		"localhost/../Charity/contracts/resolvers/Charity.sol": {
-			"keccak256": "0xcf294405fe3c0495da75eb1b358eca4c735067ac8e4aae6f48d4e58a205f78f7",
-			"urls": [
-				"bzz-raw://ff0104fd6103177bfc62470ff63b82bcf414683964cd1b859edce4ba2c411215",
-				"dweb:/ipfs/QmU2HB9YSVhqY7W2BcpdkPXduWhmsZ7vxpVCd5TZ3zr5dC"
-			]
-		},
-		"localhost/../Charity/contracts/zeppelin/math/SafeMath.sol": {
-			"keccak256": "0x2cee2f0a5f7c68ece40aa1641b34177859058b4b3d74f243112c96f0bff7d54b",
-			"urls": [
-				"bzz-raw://f2b0cad26ec863f3772bbebd99460df0d96c57eaf486e195ea402a2542d6d515",
-				"dweb:/ipfs/QmXQTSLmasfkBa5ttJeWMAGedKTV1ZErhMLkkBCJDhWHbz"
-			]
-		},
-		"localhost/../Charity/contracts/zeppelin/ownership/Ownable.sol": {
-			"keccak256": "0x1fbe7f67d6b8ac1f5aff86a9da41833273e073c47ce1e160f9addd9c64d9ff1d",
-			"urls": [
-				"bzz-raw://93d3790757d1984cef393a056010cc4269002c1aa93d635fabc8f169ef0707e8",
-				"dweb:/ipfs/QmdSDJUXB5vEXud6BJGc6TSQMBG8trJ4ZYH2onq39taBKa"
+				"bzz-raw://d46dc9a62af40def7a46f1c49981044234d429bd7d2083d595ef2f7e7043fdbf",
+				"dweb:/ipfs/QmTKR28fj5VyQBRjiQK3HCTsUdMZC8DxDdaTJECW51v1FA"
 			]
 		}
 	},

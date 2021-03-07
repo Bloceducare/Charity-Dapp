@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.5.0+commit.1d4f565a"
+		"version": "0.5.17+commit.d19bba13"
 	},
 	"language": "Solidity",
 	"output": {
@@ -18,7 +18,7 @@
 		"compilationTarget": {
 			"localhost/../Charity/contracts/resolvers/CharityFactoryFlattened.sol": "SafeMath"
 		},
-		"evmVersion": "byzantium",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"optimizer": {
 			"enabled": true,
@@ -30,7 +30,8 @@
 		"localhost/../Charity/contracts/resolvers/CharityFactoryFlattened.sol": {
 			"keccak256": "0x769c097a5ee98ddece89a8cea57fff88be9ec7d81d2e8abc8bff1f63c3614e12",
 			"urls": [
-				"bzzr://96139500153dfcb46eeb3fe9b14d76128368b93f4e878c257dcfe0babdf736fa"
+				"bzz-raw://d46dc9a62af40def7a46f1c49981044234d429bd7d2083d595ef2f7e7043fdbf",
+				"dweb:/ipfs/QmTKR28fj5VyQBRjiQK3HCTsUdMZC8DxDdaTJECW51v1FA"
 			]
 		}
 	},

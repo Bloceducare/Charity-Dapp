@@ -287,7 +287,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/resolvers/CharityFactoryFlattened.sol": "SnowflakeResolver"
+			"localhost/../Charity/contracts/resolvers/CharityFactoryFlattened.sol": "SnowflakeResolver"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -298,7 +298,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/contracts/resolvers/CharityFactoryFlattened.sol": {
+		"localhost/../Charity/contracts/resolvers/CharityFactoryFlattened.sol": {
 			"keccak256": "0x769c097a5ee98ddece89a8cea57fff88be9ec7d81d2e8abc8bff1f63c3614e12",
 			"urls": [
 				"bzz-raw://d46dc9a62af40def7a46f1c49981044234d429bd7d2083d595ef2f7e7043fdbf",

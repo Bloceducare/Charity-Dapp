@@ -1,30 +1,81 @@
 {
 	"compiler": {
-		"version": "0.5.0+commit.1d4f565a"
+		"version": "0.5.17+commit.d19bba13"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_snowflake",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_deployedAddress",
+						"type": "address"
+					}
+				],
+				"name": "newCharityCreated",
+				"type": "event"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "charities",
+				"outputs": [
+					{
+						"internalType": "contract Charity",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"constant": false,
 				"inputs": [
 					{
+						"internalType": "string",
 						"name": "_name",
 						"type": "string"
 					},
 					{
+						"internalType": "string",
 						"name": "_description",
 						"type": "string"
 					},
 					{
+						"internalType": "uint256",
 						"name": "_days",
 						"type": "uint256"
 					},
 					{
+						"internalType": "uint256",
 						"name": "_maxAmount",
 						"type": "uint256"
 					},
 					{
+						"internalType": "address",
 						"name": "_ownerAddress",
 						"type": "address"
 					}
@@ -32,6 +83,7 @@
 				"name": "createNewCharity",
 				"outputs": [
 					{
+						"internalType": "address",
 						"name": "newContract",
 						"type": "address"
 					}
@@ -46,6 +98,7 @@
 				"name": "globalOverlord",
 				"outputs": [
 					{
+						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
@@ -60,6 +113,7 @@
 				"name": "returnAllCharities",
 				"outputs": [
 					{
+						"internalType": "contract Charity[]",
 						"name": "",
 						"type": "address[]"
 					}
@@ -72,6 +126,7 @@
 				"constant": false,
 				"inputs": [
 					{
+						"internalType": "address",
 						"name": "_newOverlord",
 						"type": "address"
 					}
@@ -81,48 +136,6 @@
 				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [
-					{
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "charities",
-				"outputs": [
-					{
-						"name": "",
-						"type": "address"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"name": "_snowflake",
-						"type": "address"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"name": "_deployedAddress",
-						"type": "address"
-					}
-				],
-				"name": "newCharityCreated",
-				"type": "event"
 			}
 		],
 		"devdoc": {
@@ -136,7 +149,7 @@
 		"compilationTarget": {
 			"localhost/../Charity/contracts/resolvers/CharityFactoryFlattened.sol": "charityFactory"
 		},
-		"evmVersion": "byzantium",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"optimizer": {
 			"enabled": true,
@@ -148,7 +161,8 @@
 		"localhost/../Charity/contracts/resolvers/CharityFactoryFlattened.sol": {
 			"keccak256": "0x769c097a5ee98ddece89a8cea57fff88be9ec7d81d2e8abc8bff1f63c3614e12",
 			"urls": [
-				"bzzr://96139500153dfcb46eeb3fe9b14d76128368b93f4e878c257dcfe0babdf736fa"
+				"bzz-raw://d46dc9a62af40def7a46f1c49981044234d429bd7d2083d595ef2f7e7043fdbf",
+				"dweb:/ipfs/QmTKR28fj5VyQBRjiQK3HCTsUdMZC8DxDdaTJECW51v1FA"
 			]
 		}
 	},

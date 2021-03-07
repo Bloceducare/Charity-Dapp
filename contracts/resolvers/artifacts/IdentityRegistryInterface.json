@@ -77,220 +77,32 @@
 			"constant": false,
 			"inputs": [
 				{
-					"name": "ein",
-					"type": "uint256"
-				},
-				{
-					"name": "resolvers",
-					"type": "address[]"
-				}
-			],
-			"name": "addResolversFor",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [
-				{
-					"name": "_address",
-					"type": "address"
-				}
-			],
-			"name": "getEIN",
-			"outputs": [
-				{
-					"name": "ein",
-					"type": "uint256"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "ein",
-					"type": "uint256"
-				},
-				{
-					"name": "providers",
-					"type": "address[]"
-				}
-			],
-			"name": "removeProvidersFor",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "recoveryAddress",
-					"type": "address"
-				},
-				{
-					"name": "associatedAddress",
-					"type": "address"
-				},
-				{
-					"name": "providers",
-					"type": "address[]"
-				},
-				{
-					"name": "resolvers",
-					"type": "address[]"
-				},
-				{
-					"name": "v",
-					"type": "uint8"
-				},
-				{
-					"name": "r",
-					"type": "bytes32"
-				},
-				{
-					"name": "s",
-					"type": "bytes32"
-				},
-				{
-					"name": "timestamp",
-					"type": "uint256"
-				}
-			],
-			"name": "createIdentityDelegated",
-			"outputs": [
-				{
-					"name": "ein",
-					"type": "uint256"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "newRecoveryAddress",
-					"type": "address"
-				}
-			],
-			"name": "triggerRecoveryAddressChange",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "providers",
-					"type": "address[]"
-				}
-			],
-			"name": "removeProviders",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [
-				{
-					"name": "_address",
-					"type": "address"
-				}
-			],
-			"name": "hasIdentity",
-			"outputs": [
-				{
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "ein",
-					"type": "uint256"
-				},
-				{
-					"name": "newRecoveryAddress",
-					"type": "address"
-				}
-			],
-			"name": "triggerRecoveryAddressChangeFor",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "recoveryAddress",
-					"type": "address"
-				},
-				{
-					"name": "providers",
-					"type": "address[]"
-				},
-				{
-					"name": "resolvers",
-					"type": "address[]"
-				}
-			],
-			"name": "createIdentity",
-			"outputs": [
-				{
-					"name": "ein",
-					"type": "uint256"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
+					"internalType": "address",
 					"name": "approvingAddress",
 					"type": "address"
 				},
 				{
+					"internalType": "address",
 					"name": "addressToAdd",
 					"type": "address"
 				},
 				{
+					"internalType": "uint8",
 					"name": "v",
 					"type": "uint8"
 				},
 				{
+					"internalType": "bytes32",
 					"name": "r",
 					"type": "bytes32"
 				},
 				{
+					"internalType": "bytes32",
 					"name": "s",
 					"type": "bytes32"
 				},
 				{
+					"internalType": "uint256",
 					"name": "timestamp",
 					"type": "uint256"
 				}
@@ -303,252 +115,34 @@
 		},
 		{
 			"constant": false,
-			"inputs": [],
-			"name": "removeAssociatedAddress",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": true,
 			"inputs": [
 				{
-					"name": "ein",
-					"type": "uint256"
-				},
-				{
-					"name": "provider",
-					"type": "address"
-				}
-			],
-			"name": "isProviderFor",
-			"outputs": [
-				{
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "ein",
-					"type": "uint256"
-				},
-				{
-					"name": "resolvers",
-					"type": "address[]"
-				}
-			],
-			"name": "removeResolversFor",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [
-				{
-					"name": "ein",
-					"type": "uint256"
-				}
-			],
-			"name": "identityExists",
-			"outputs": [
-				{
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "providers",
-					"type": "address[]"
-				}
-			],
-			"name": "addProviders",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [
-				{
-					"name": "ein",
-					"type": "uint256"
-				}
-			],
-			"name": "getIdentity",
-			"outputs": [
-				{
-					"name": "recoveryAddress",
-					"type": "address"
-				},
-				{
-					"name": "associatedAddresses",
-					"type": "address[]"
-				},
-				{
-					"name": "providers",
-					"type": "address[]"
-				},
-				{
-					"name": "resolvers",
-					"type": "address[]"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [
-				{
-					"name": "_address",
-					"type": "address"
-				},
-				{
-					"name": "messageHash",
-					"type": "bytes32"
-				},
-				{
-					"name": "v",
-					"type": "uint8"
-				},
-				{
-					"name": "r",
-					"type": "bytes32"
-				},
-				{
-					"name": "s",
-					"type": "bytes32"
-				}
-			],
-			"name": "isSigned",
-			"outputs": [
-				{
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "ein",
-					"type": "uint256"
-				},
-				{
-					"name": "newAssociatedAddress",
-					"type": "address"
-				},
-				{
-					"name": "v",
-					"type": "uint8"
-				},
-				{
-					"name": "r",
-					"type": "bytes32"
-				},
-				{
-					"name": "s",
-					"type": "bytes32"
-				},
-				{
-					"name": "timestamp",
-					"type": "uint256"
-				}
-			],
-			"name": "triggerRecovery",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "ein",
-					"type": "uint256"
-				},
-				{
-					"name": "providers",
-					"type": "address[]"
-				}
-			],
-			"name": "addProvidersFor",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [
-				{
-					"name": "ein",
-					"type": "uint256"
-				},
-				{
-					"name": "_address",
-					"type": "address"
-				}
-			],
-			"name": "isAssociatedAddressFor",
-			"outputs": [
-				{
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
+					"internalType": "address",
 					"name": "approvingAddress",
 					"type": "address"
 				},
 				{
+					"internalType": "address",
 					"name": "addressToAdd",
 					"type": "address"
 				},
 				{
+					"internalType": "uint8[2]",
 					"name": "v",
 					"type": "uint8[2]"
 				},
 				{
+					"internalType": "bytes32[2]",
 					"name": "r",
 					"type": "bytes32[2]"
 				},
 				{
+					"internalType": "bytes32[2]",
 					"name": "s",
 					"type": "bytes32[2]"
 				},
 				{
+					"internalType": "uint256[2]",
 					"name": "timestamp",
 					"type": "uint256[2]"
 				}
@@ -563,64 +157,32 @@
 			"constant": false,
 			"inputs": [
 				{
-					"name": "resolvers",
+					"internalType": "address[]",
+					"name": "providers",
 					"type": "address[]"
 				}
 			],
-			"name": "removeResolvers",
+			"name": "addProviders",
 			"outputs": [],
 			"payable": false,
 			"stateMutability": "nonpayable",
 			"type": "function"
 		},
 		{
-			"constant": true,
+			"constant": false,
 			"inputs": [
 				{
+					"internalType": "uint256",
 					"name": "ein",
 					"type": "uint256"
 				},
 				{
-					"name": "resolver",
-					"type": "address"
+					"internalType": "address[]",
+					"name": "providers",
+					"type": "address[]"
 				}
 			],
-			"name": "isResolverFor",
-			"outputs": [
-				{
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "addressToRemove",
-					"type": "address"
-				},
-				{
-					"name": "v",
-					"type": "uint8"
-				},
-				{
-					"name": "r",
-					"type": "bytes32"
-				},
-				{
-					"name": "s",
-					"type": "bytes32"
-				},
-				{
-					"name": "timestamp",
-					"type": "uint256"
-				}
-			],
-			"name": "removeAssociatedAddressDelegated",
+			"name": "addProvidersFor",
 			"outputs": [],
 			"payable": false,
 			"stateMutability": "nonpayable",
@@ -630,6 +192,7 @@
 			"constant": false,
 			"inputs": [
 				{
+					"internalType": "address[]",
 					"name": "resolvers",
 					"type": "address[]"
 				}
@@ -644,23 +207,541 @@
 			"constant": false,
 			"inputs": [
 				{
+					"internalType": "uint256",
 					"name": "ein",
 					"type": "uint256"
 				},
 				{
+					"internalType": "address[]",
+					"name": "resolvers",
+					"type": "address[]"
+				}
+			],
+			"name": "addResolversFor",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "recoveryAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "address[]",
+					"name": "providers",
+					"type": "address[]"
+				},
+				{
+					"internalType": "address[]",
+					"name": "resolvers",
+					"type": "address[]"
+				}
+			],
+			"name": "createIdentity",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "ein",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "recoveryAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "associatedAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "address[]",
+					"name": "providers",
+					"type": "address[]"
+				},
+				{
+					"internalType": "address[]",
+					"name": "resolvers",
+					"type": "address[]"
+				},
+				{
+					"internalType": "uint8",
+					"name": "v",
+					"type": "uint8"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "s",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint256",
+					"name": "timestamp",
+					"type": "uint256"
+				}
+			],
+			"name": "createIdentityDelegated",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "ein",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_address",
+					"type": "address"
+				}
+			],
+			"name": "getEIN",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "ein",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "ein",
+					"type": "uint256"
+				}
+			],
+			"name": "getIdentity",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "recoveryAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "address[]",
+					"name": "associatedAddresses",
+					"type": "address[]"
+				},
+				{
+					"internalType": "address[]",
+					"name": "providers",
+					"type": "address[]"
+				},
+				{
+					"internalType": "address[]",
+					"name": "resolvers",
+					"type": "address[]"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_address",
+					"type": "address"
+				}
+			],
+			"name": "hasIdentity",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "ein",
+					"type": "uint256"
+				}
+			],
+			"name": "identityExists",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "ein",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "_address",
+					"type": "address"
+				}
+			],
+			"name": "isAssociatedAddressFor",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "ein",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "provider",
+					"type": "address"
+				}
+			],
+			"name": "isProviderFor",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "ein",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "resolver",
+					"type": "address"
+				}
+			],
+			"name": "isResolverFor",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_address",
+					"type": "address"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "messageHash",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint8",
+					"name": "v",
+					"type": "uint8"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "s",
+					"type": "bytes32"
+				}
+			],
+			"name": "isSigned",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [],
+			"name": "removeAssociatedAddress",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "addressToRemove",
+					"type": "address"
+				},
+				{
+					"internalType": "uint8",
+					"name": "v",
+					"type": "uint8"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "s",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint256",
+					"name": "timestamp",
+					"type": "uint256"
+				}
+			],
+			"name": "removeAssociatedAddressDelegated",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "providers",
+					"type": "address[]"
+				}
+			],
+			"name": "removeProviders",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "ein",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address[]",
+					"name": "providers",
+					"type": "address[]"
+				}
+			],
+			"name": "removeProvidersFor",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "resolvers",
+					"type": "address[]"
+				}
+			],
+			"name": "removeResolvers",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "ein",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address[]",
+					"name": "resolvers",
+					"type": "address[]"
+				}
+			],
+			"name": "removeResolversFor",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "ein",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address[]",
 					"name": "firstChunk",
 					"type": "address[]"
 				},
 				{
+					"internalType": "address[]",
 					"name": "lastChunk",
 					"type": "address[]"
 				},
 				{
+					"internalType": "bool",
 					"name": "resetResolvers",
 					"type": "bool"
 				}
 			],
 			"name": "triggerDestruction",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "ein",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "newAssociatedAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint8",
+					"name": "v",
+					"type": "uint8"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "s",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint256",
+					"name": "timestamp",
+					"type": "uint256"
+				}
+			],
+			"name": "triggerRecovery",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "newRecoveryAddress",
+					"type": "address"
+				}
+			],
+			"name": "triggerRecoveryAddressChange",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "ein",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "newRecoveryAddress",
+					"type": "address"
+				}
+			],
+			"name": "triggerRecoveryAddressChangeFor",
 			"outputs": [],
 			"payable": false,
 			"stateMutability": "nonpayable",
