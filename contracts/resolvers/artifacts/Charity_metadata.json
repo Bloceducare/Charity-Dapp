@@ -615,7 +615,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/../Charity/contracts/resolvers/CharityFactoryFlattened.sol": "Charity"
+			"localhost/../Charity/contracts/resolvers/Charity.sol": "Charity"
 		},
 		"evmVersion": "byzantium",
 		"libraries": {},
@@ -626,10 +626,52 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/../Charity/contracts/resolvers/CharityFactoryFlattened.sol": {
-			"keccak256": "0x769c097a5ee98ddece89a8cea57fff88be9ec7d81d2e8abc8bff1f63c3614e12",
+		"localhost/../Charity/contracts/SnowflakeResolver.sol": {
+			"keccak256": "0x47767c5bf5606300e05d8a37ac8696101621cc182a608fcd5b44f7581904991f",
 			"urls": [
-				"bzzr://96139500153dfcb46eeb3fe9b14d76128368b93f4e878c257dcfe0babdf736fa"
+				"bzzr://17d4af2410f7c74dad682be3318cb01b467e76aee806639a202385489e90546b"
+			]
+		},
+		"localhost/../Charity/contracts/interfaces/HydroInterface.sol": {
+			"keccak256": "0xf7279bffebd5eb0d1bdc3500e8a12029ddc3249879061e677dc533eac3c8a8fc",
+			"urls": [
+				"bzzr://9b89940364c38afa285b9aa023240e832bbe47f81186743e165bed93ab27a1ac"
+			]
+		},
+		"localhost/../Charity/contracts/interfaces/IdentityRegistryInterface.sol": {
+			"keccak256": "0xb559191dbd30da97a8b5759a895d7f4eff420eedc55b0786ae7206fbe384dc15",
+			"urls": [
+				"bzzr://a6122de11af1f831b1a93dba66aabe9e299f0040cf3404510790453addc6e0d9"
+			]
+		},
+		"localhost/../Charity/contracts/interfaces/SnowflakeInterface.sol": {
+			"keccak256": "0x939a1e74fab994f6fd874077f8efbaeaa688ac19ea8a17e9f8797710cefdf611",
+			"urls": [
+				"bzzr://50b6adae247f1d396f01dc637df8b156081bf6a0cd1c641797177fa417748b62"
+			]
+		},
+		"localhost/../Charity/contracts/interfaces/SnowflakeResolverInterface.sol": {
+			"keccak256": "0x8a5595a41d86f78514dfcd6eaa0ec79482187b8ead1c8c129faab29aeb2aced1",
+			"urls": [
+				"bzzr://1f741c8e9d50535a1a18c71c689e1e2876cd75e30256273ffeb2b47b72bcbb76"
+			]
+		},
+		"localhost/../Charity/contracts/resolvers/Charity.sol": {
+			"keccak256": "0xcf294405fe3c0495da75eb1b358eca4c735067ac8e4aae6f48d4e58a205f78f7",
+			"urls": [
+				"bzzr://465317e2aa64587bd8da2050afdac7469863482c21a8628c9a437792a5d58bd5"
+			]
+		},
+		"localhost/../Charity/contracts/zeppelin/math/SafeMath.sol": {
+			"keccak256": "0x2cee2f0a5f7c68ece40aa1641b34177859058b4b3d74f243112c96f0bff7d54b",
+			"urls": [
+				"bzzr://f84a966fb57ec20ab2ed137b385c332cb5f67a5ad2ee5c46eb64b3ca6a6ab1cd"
+			]
+		},
+		"localhost/../Charity/contracts/zeppelin/ownership/Ownable.sol": {
+			"keccak256": "0x1fbe7f67d6b8ac1f5aff86a9da41833273e073c47ce1e160f9addd9c64d9ff1d",
+			"urls": [
+				"bzzr://1a147508938228cad4bbc0f17c66e6d541d8740e8ae521dab377fe1519f801f1"
 			]
 		}
 	},

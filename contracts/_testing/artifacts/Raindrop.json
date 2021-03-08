@@ -37,6 +37,7 @@
 			"sourceMap": ""
 		},
 		"deployedBytecode": {
+			"immutableReferences": {},
 			"linkReferences": {},
 			"object": "",
 			"opcodes": "",
@@ -49,28 +50,30 @@
 	},
 	"abi": [
 		{
-			"constant": false,
 			"inputs": [
 				{
+					"internalType": "address",
 					"name": "_sender",
 					"type": "address"
 				},
 				{
+					"internalType": "uint256",
 					"name": "_value",
 					"type": "uint256"
 				},
 				{
+					"internalType": "uint256",
 					"name": "_challenge",
 					"type": "uint256"
 				},
 				{
+					"internalType": "uint256",
 					"name": "_partnerId",
 					"type": "uint256"
 				}
 			],
 			"name": "authenticate",
 			"outputs": [],
-			"payable": false,
 			"stateMutability": "nonpayable",
 			"type": "function"
 		}
