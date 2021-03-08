@@ -1,150 +1,37 @@
 {
 	"compiler": {
-		"version": "0.5.17+commit.d19bba13"
+		"version": "0.5.0+commit.1d4f565a"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
-				"inputs": [
+				"constant": true,
+				"inputs": [],
+				"name": "checkIfCharityExpired",
+				"outputs": [
 					{
-						"internalType": "address",
-						"name": "snowflakeAddress",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "projectTitle",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "projectDesc",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "charityEnd",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "goalAmount",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "_owner",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_overlord",
-						"type": "address"
+						"name": "",
+						"type": "bool"
 					}
 				],
 				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "previousOwner",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "newOwner",
-						"type": "address"
-					}
-				],
-				"name": "OwnershipTransferred",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "timeApproved",
-						"type": "uint256"
-					}
-				],
-				"name": "charityApproved",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "timeDisabled",
-						"type": "uint256"
-					}
-				],
-				"name": "charityDisabled",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"internalType": "address",
-						"name": "recipient",
-						"type": "address"
-					}
-				],
-				"name": "creatorPaid",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"internalType": "address",
-						"name": "contributor",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "currentTotal",
-						"type": "uint256"
-					}
-				],
-				"name": "fundingReceived",
-				"type": "event"
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"constant": true,
 				"inputs": [
 					{
-						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "aParticipant",
+				"name": "contributions",
 				"outputs": [
 					{
-						"internalType": "bool",
 						"name": "",
-						"type": "bool"
+						"type": "uint256"
 					}
 				],
 				"payable": false,
@@ -163,55 +50,9 @@
 			{
 				"constant": true,
 				"inputs": [],
-				"name": "callOnAddition",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "callOnRemoval",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "charityGoal",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
 				"name": "charityOwnerAddress",
 				"outputs": [
 					{
-						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
@@ -221,29 +62,27 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "checkIfCharityExpired",
-				"outputs": [
+				"constant": false,
+				"inputs": [
 					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
+						"name": "to",
+						"type": "address"
 					}
 				],
+				"name": "withdrawContributions",
+				"outputs": [],
 				"payable": false,
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"constant": true,
 				"inputs": [],
-				"name": "checkIfFundingComplete",
+				"name": "raiseBy",
 				"outputs": [
 					{
-						"internalType": "bool",
 						"name": "",
-						"type": "bool"
+						"type": "uint256"
 					}
 				],
 				"payable": false,
@@ -256,7 +95,6 @@
 				"name": "checkRemainingAmount",
 				"outputs": [
 					{
-						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
@@ -268,27 +106,11 @@
 			{
 				"constant": true,
 				"inputs": [],
-				"name": "checkRemainingTime",
+				"name": "title",
 				"outputs": [
 					{
-						"internalType": "uint256",
 						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "checkState",
-				"outputs": [
-					{
-						"internalType": "enum Charity.State",
-						"name": "",
-						"type": "uint8"
+						"type": "string"
 					}
 				],
 				"payable": false,
@@ -299,7 +121,6 @@
 				"constant": false,
 				"inputs": [
 					{
-						"internalType": "address",
 						"name": "_target",
 						"type": "address"
 					}
@@ -307,7 +128,6 @@
 				"name": "checkforReg",
 				"outputs": [
 					{
-						"internalType": "bool",
 						"name": "",
 						"type": "bool"
 					}
@@ -318,14 +138,8 @@
 			},
 			{
 				"constant": false,
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
-				"name": "contribute",
+				"inputs": [],
+				"name": "renounceOwnership",
 				"outputs": [],
 				"payable": false,
 				"stateMutability": "nonpayable",
@@ -333,34 +147,12 @@
 			},
 			{
 				"constant": true,
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "contributions",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
 				"inputs": [],
-				"name": "currentBalance",
+				"name": "callOnAddition",
 				"outputs": [
 					{
-						"internalType": "uint256",
 						"name": "",
-						"type": "uint256"
+						"type": "bool"
 					}
 				],
 				"payable": false,
@@ -373,7 +165,20 @@
 				"name": "description",
 				"outputs": [
 					{
-						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "snowflakeDescription",
+				"outputs": [
+					{
 						"name": "",
 						"type": "string"
 					}
@@ -394,84 +199,11 @@
 			{
 				"constant": true,
 				"inputs": [],
-				"name": "isOwner",
+				"name": "snowflakeName",
 				"outputs": [
 					{
-						"internalType": "bool",
 						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "ein",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bytes",
-						"name": "",
-						"type": "bytes"
-					}
-				],
-				"name": "onAddition",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bytes",
-						"name": "",
-						"type": "bytes"
-					}
-				],
-				"name": "onRemoval",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "overlord",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
+						"type": "string"
 					}
 				],
 				"payable": false,
@@ -484,7 +216,6 @@
 				"name": "owner",
 				"outputs": [
 					{
-						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
@@ -496,10 +227,101 @@
 			{
 				"constant": true,
 				"inputs": [],
-				"name": "raiseBy",
+				"name": "callOnRemoval",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "ein",
+						"type": "uint256"
+					},
+					{
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "onAddition",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "onRemoval",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "checkState",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "checkRemainingTime",
+				"outputs": [
+					{
 						"name": "",
 						"type": "uint256"
 					}
@@ -509,9 +331,42 @@
 				"type": "function"
 			},
 			{
-				"constant": false,
+				"constant": true,
 				"inputs": [],
-				"name": "renounceOwnership",
+				"name": "checkIfFundingComplete",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "state",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "contribute",
 				"outputs": [],
 				"payable": false,
 				"stateMutability": "nonpayable",
@@ -521,7 +376,6 @@
 				"constant": false,
 				"inputs": [
 					{
-						"internalType": "address",
 						"name": "_snowflakeAddress",
 						"type": "address"
 					}
@@ -535,10 +389,23 @@
 			{
 				"constant": true,
 				"inputs": [],
-				"name": "snowflakeAddress",
+				"name": "currentBalance",
 				"outputs": [
 					{
-						"internalType": "address",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "overlord",
+				"outputs": [
+					{
 						"name": "",
 						"type": "address"
 					}
@@ -550,57 +417,11 @@
 			{
 				"constant": true,
 				"inputs": [],
-				"name": "snowflakeDescription",
+				"name": "charityGoal",
 				"outputs": [
 					{
-						"internalType": "string",
 						"name": "",
-						"type": "string"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "snowflakeName",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "state",
-				"outputs": [
-					{
-						"internalType": "enum Charity.State",
-						"name": "",
-						"type": "uint8"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "title",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
+						"type": "uint256"
 					}
 				],
 				"payable": false,
@@ -611,7 +432,6 @@
 				"constant": false,
 				"inputs": [
 					{
-						"internalType": "address",
 						"name": "newOwner",
 						"type": "address"
 					}
@@ -623,19 +443,147 @@
 				"type": "function"
 			},
 			{
-				"constant": false,
-				"inputs": [
+				"constant": true,
+				"inputs": [],
+				"name": "snowflakeAddress",
+				"outputs": [
 					{
-						"internalType": "address",
-						"name": "to",
+						"name": "",
 						"type": "address"
 					}
 				],
-				"name": "withdrawContributions",
-				"outputs": [],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "aParticipant",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"name": "snowflakeAddress",
+						"type": "address"
+					},
+					{
+						"name": "projectTitle",
+						"type": "string"
+					},
+					{
+						"name": "projectDesc",
+						"type": "string"
+					},
+					{
+						"name": "charityEnd",
+						"type": "uint256"
+					},
+					{
+						"name": "goalAmount",
+						"type": "uint256"
+					},
+					{
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"name": "_overlord",
+						"type": "address"
+					}
+				],
 				"payable": false,
 				"stateMutability": "nonpayable",
-				"type": "function"
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "contributor",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "currentTotal",
+						"type": "uint256"
+					}
+				],
+				"name": "fundingReceived",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "recipient",
+						"type": "address"
+					}
+				],
+				"name": "creatorPaid",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "timeApproved",
+						"type": "uint256"
+					}
+				],
+				"name": "charityApproved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "timeDisabled",
+						"type": "uint256"
+					}
+				],
+				"name": "charityDisabled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
 			}
 		],
 		"devdoc": {
@@ -667,9 +615,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/resolvers/Charity.sol": "Charity"
+			"localhost/../Charity/contracts/resolvers/CharityFactoryFlattened.sol": "Charity"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "byzantium",
 		"libraries": {},
 		"optimizer": {
 			"enabled": true,
@@ -678,60 +626,10 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/contracts/SnowflakeResolver.sol": {
-			"keccak256": "0x47767c5bf5606300e05d8a37ac8696101621cc182a608fcd5b44f7581904991f",
+		"localhost/../Charity/contracts/resolvers/CharityFactoryFlattened.sol": {
+			"keccak256": "0x769c097a5ee98ddece89a8cea57fff88be9ec7d81d2e8abc8bff1f63c3614e12",
 			"urls": [
-				"bzz-raw://772a6c8f6129ece514c7b22f1f923f068568bc54480a75e2ac441d87cc18d084",
-				"dweb:/ipfs/QmdVzXNzAaQbVfR2KNd41U6dV2XQnndJGoRM4wX5Rgcbah"
-			]
-		},
-		"localhost/contracts/interfaces/HydroInterface.sol": {
-			"keccak256": "0x3f0b755561062d9912aca9a46d728918404fe17a09cfbadfcdd498bdd6fd0b6e",
-			"urls": [
-				"bzz-raw://2c7728a242939831b961ce3846dcf948053a6d97e84d62d7de15fa04e050f4ed",
-				"dweb:/ipfs/QmTb87xRzJoTjn6Zqxwn4pobLaRwoKd5PTVXeJ79L59MSW"
-			]
-		},
-		"localhost/contracts/interfaces/IdentityRegistryInterface.sol": {
-			"keccak256": "0xb559191dbd30da97a8b5759a895d7f4eff420eedc55b0786ae7206fbe384dc15",
-			"urls": [
-				"bzz-raw://4ca73a9731d9a2dd9603593b2d847af126e20af8d4242edb91d5bfba5107149d",
-				"dweb:/ipfs/QmdJ5oW52QuXipANPCy8sJPwULkdXmVWjAPEWgPoy9oudk"
-			]
-		},
-		"localhost/contracts/interfaces/SnowflakeInterface.sol": {
-			"keccak256": "0xb34e22de661c32131d4d5bbd8f8dbf1794e5d944736ccb31870b6f75bdd322e5",
-			"urls": [
-				"bzz-raw://0bd699804c3fba3c2806fcc0d1f5e6ec10151a701b491ef00c8583c81747143d",
-				"dweb:/ipfs/QmU47iRzq9bEFcuS7uS65pJS4HgczwZEvQwgDvdNPDDpWT"
-			]
-		},
-		"localhost/contracts/interfaces/SnowflakeResolverInterface.sol": {
-			"keccak256": "0x8a5595a41d86f78514dfcd6eaa0ec79482187b8ead1c8c129faab29aeb2aced1",
-			"urls": [
-				"bzz-raw://adce9474a5bdaf71df2dd13b274be5e133aea40a45ac477cff3affa7b36c04f2",
-				"dweb:/ipfs/QmPPUi5d3uqA8dgLkJY6NUJZXNkV2gHCCbgtUXdb1Q42D4"
-			]
-		},
-		"localhost/contracts/resolvers/Charity.sol": {
-			"keccak256": "0xcf294405fe3c0495da75eb1b358eca4c735067ac8e4aae6f48d4e58a205f78f7",
-			"urls": [
-				"bzz-raw://ff0104fd6103177bfc62470ff63b82bcf414683964cd1b859edce4ba2c411215",
-				"dweb:/ipfs/QmU2HB9YSVhqY7W2BcpdkPXduWhmsZ7vxpVCd5TZ3zr5dC"
-			]
-		},
-		"localhost/contracts/zeppelin/math/SafeMath.sol": {
-			"keccak256": "0x2cee2f0a5f7c68ece40aa1641b34177859058b4b3d74f243112c96f0bff7d54b",
-			"urls": [
-				"bzz-raw://f2b0cad26ec863f3772bbebd99460df0d96c57eaf486e195ea402a2542d6d515",
-				"dweb:/ipfs/QmXQTSLmasfkBa5ttJeWMAGedKTV1ZErhMLkkBCJDhWHbz"
-			]
-		},
-		"localhost/contracts/zeppelin/ownership/Ownable.sol": {
-			"keccak256": "0x1fbe7f67d6b8ac1f5aff86a9da41833273e073c47ce1e160f9addd9c64d9ff1d",
-			"urls": [
-				"bzz-raw://93d3790757d1984cef393a056010cc4269002c1aa93d635fabc8f169ef0707e8",
-				"dweb:/ipfs/QmdSDJUXB5vEXud6BJGc6TSQMBG8trJ4ZYH2onq39taBKa"
+				"bzzr://96139500153dfcb46eeb3fe9b14d76128368b93f4e878c257dcfe0babdf736fa"
 			]
 		}
 	},

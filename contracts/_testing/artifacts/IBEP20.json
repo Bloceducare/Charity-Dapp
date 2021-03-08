@@ -44,19 +44,12 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"_blackListDapp(address)": "540dbf34",
-			"_whiteListDapp(address)": "b1bbd59e",
 			"allowance(address,address)": "dd62ed3e",
-			"allowed(address,address)": "5c658165",
 			"approve(address,uint256)": "095ea7b3",
-			"approveAndCall(address,uint256,bytes)": "cae9ca51",
-			"authenticate(uint256,uint256,uint256)": "053011b7",
 			"balanceOf(address)": "70a08231",
-			"balances(address)": "27e235e3",
-			"burn(address,uint256)": "9dc29fac",
-			"changeMaxBurn(uint256)": "71ee5ca9",
+			"decimals()": "313ce567",
+			"getOwner()": "893d20e8",
 			"name()": "06fdde03",
-			"setRaindropAddress(address)": "b302ea1e",
 			"symbol()": "95d89b41",
 			"totalSupply()": "18160ddd",
 			"transfer(address,uint256)": "a9059cbb",
@@ -64,28 +57,6 @@
 		}
 	},
 	"abi": [
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "_value",
-					"type": "uint256"
-				},
-				{
-					"name": "_challenge",
-					"type": "uint256"
-				},
-				{
-					"name": "_partnerId",
-					"type": "uint256"
-				}
-			],
-			"name": "authenticate",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
 		{
 			"constant": true,
 			"inputs": [],
@@ -104,18 +75,18 @@
 			"constant": false,
 			"inputs": [
 				{
-					"name": "_spender",
+					"name": "spender",
 					"type": "address"
 				},
 				{
-					"name": "_amount",
+					"name": "amount",
 					"type": "uint256"
 				}
 			],
 			"name": "approve",
 			"outputs": [
 				{
-					"name": "success",
+					"name": "",
 					"type": "bool"
 				}
 			],
@@ -141,59 +112,21 @@
 			"constant": false,
 			"inputs": [
 				{
-					"name": "_from",
+					"name": "sender",
 					"type": "address"
 				},
 				{
-					"name": "_to",
+					"name": "recipient",
 					"type": "address"
 				},
 				{
-					"name": "_amount",
+					"name": "amount",
 					"type": "uint256"
 				}
 			],
 			"name": "transferFrom",
 			"outputs": [
 				{
-					"name": "success",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [
-				{
-					"name": "",
-					"type": "address"
-				}
-			],
-			"name": "balances",
-			"outputs": [
-				{
-					"name": "",
-					"type": "uint256"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "_dappAddress",
-					"type": "address"
-				}
-			],
-			"name": "_blackListDapp",
-			"outputs": [
-				{
 					"name": "",
 					"type": "bool"
 				}
@@ -204,21 +137,12 @@
 		},
 		{
 			"constant": true,
-			"inputs": [
-				{
-					"name": "",
-					"type": "address"
-				},
-				{
-					"name": "",
-					"type": "address"
-				}
-			],
-			"name": "allowed",
+			"inputs": [],
+			"name": "decimals",
 			"outputs": [
 				{
 					"name": "",
-					"type": "uint256"
+					"type": "uint8"
 				}
 			],
 			"payable": false,
@@ -229,14 +153,14 @@
 			"constant": true,
 			"inputs": [
 				{
-					"name": "_owner",
+					"name": "account",
 					"type": "address"
 				}
 			],
 			"name": "balanceOf",
 			"outputs": [
 				{
-					"name": "balance",
+					"name": "",
 					"type": "uint256"
 				}
 			],
@@ -245,22 +169,17 @@
 			"type": "function"
 		},
 		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "_newBurn",
-					"type": "uint256"
-				}
-			],
-			"name": "changeMaxBurn",
+			"constant": true,
+			"inputs": [],
+			"name": "getOwner",
 			"outputs": [
 				{
 					"name": "",
-					"type": "uint256"
+					"type": "address"
 				}
 			],
 			"payable": false,
-			"stateMutability": "nonpayable",
+			"stateMutability": "view",
 			"type": "function"
 		},
 		{
@@ -281,101 +200,18 @@
 			"constant": false,
 			"inputs": [
 				{
-					"name": "_from",
+					"name": "recipient",
 					"type": "address"
 				},
 				{
-					"name": "_value",
-					"type": "uint256"
-				}
-			],
-			"name": "burn",
-			"outputs": [
-				{
-					"name": "burnAmount",
-					"type": "uint256"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "_to",
-					"type": "address"
-				},
-				{
-					"name": "_amount",
+					"name": "amount",
 					"type": "uint256"
 				}
 			],
 			"name": "transfer",
 			"outputs": [
 				{
-					"name": "success",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "_dappAddress",
-					"type": "address"
-				}
-			],
-			"name": "_whiteListDapp",
-			"outputs": [
-				{
 					"name": "",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "_raindrop",
-					"type": "address"
-				}
-			],
-			"name": "setRaindropAddress",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"name": "_spender",
-					"type": "address"
-				},
-				{
-					"name": "_value",
-					"type": "uint256"
-				},
-				{
-					"name": "_extraData",
-					"type": "bytes"
-				}
-			],
-			"name": "approveAndCall",
-			"outputs": [
-				{
-					"name": "success",
 					"type": "bool"
 				}
 			],
@@ -391,20 +227,64 @@
 					"type": "address"
 				},
 				{
-					"name": "_spender",
+					"name": "spender",
 					"type": "address"
 				}
 			],
 			"name": "allowance",
 			"outputs": [
 				{
-					"name": "remaining",
+					"name": "",
 					"type": "uint256"
 				}
 			],
 			"payable": false,
 			"stateMutability": "view",
 			"type": "function"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"name": "from",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "Transfer",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"name": "owner",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"name": "spender",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "Approval",
+			"type": "event"
 		}
 	]
 }

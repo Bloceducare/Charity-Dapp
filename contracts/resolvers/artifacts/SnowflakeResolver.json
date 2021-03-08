@@ -60,174 +60,6 @@
 	},
 	"abi": [
 		{
-			"inputs": [
-				{
-					"internalType": "string",
-					"name": "_snowflakeName",
-					"type": "string"
-				},
-				{
-					"internalType": "string",
-					"name": "_snowflakeDescription",
-					"type": "string"
-				},
-				{
-					"internalType": "address",
-					"name": "_snowflakeAddress",
-					"type": "address"
-				},
-				{
-					"internalType": "bool",
-					"name": "_callOnAddition",
-					"type": "bool"
-				},
-				{
-					"internalType": "bool",
-					"name": "_callOnRemoval",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "constructor"
-		},
-		{
-			"anonymous": false,
-			"inputs": [
-				{
-					"indexed": true,
-					"internalType": "address",
-					"name": "previousOwner",
-					"type": "address"
-				},
-				{
-					"indexed": true,
-					"internalType": "address",
-					"name": "newOwner",
-					"type": "address"
-				}
-			],
-			"name": "OwnershipTransferred",
-			"type": "event"
-		},
-		{
-			"constant": true,
-			"inputs": [],
-			"name": "callOnAddition",
-			"outputs": [
-				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [],
-			"name": "callOnRemoval",
-			"outputs": [
-				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [],
-			"name": "isOwner",
-			"outputs": [
-				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"internalType": "uint256",
-					"name": "ein",
-					"type": "uint256"
-				},
-				{
-					"internalType": "uint256",
-					"name": "allowance",
-					"type": "uint256"
-				},
-				{
-					"internalType": "bytes",
-					"name": "extraData",
-					"type": "bytes"
-				}
-			],
-			"name": "onAddition",
-			"outputs": [
-				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": false,
-			"inputs": [
-				{
-					"internalType": "uint256",
-					"name": "ein",
-					"type": "uint256"
-				},
-				{
-					"internalType": "bytes",
-					"name": "extraData",
-					"type": "bytes"
-				}
-			],
-			"name": "onRemoval",
-			"outputs": [
-				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [],
-			"name": "owner",
-			"outputs": [
-				{
-					"internalType": "address",
-					"name": "",
-					"type": "address"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
 			"constant": false,
 			"inputs": [],
 			"name": "renounceOwnership",
@@ -237,29 +69,13 @@
 			"type": "function"
 		},
 		{
-			"constant": false,
-			"inputs": [
-				{
-					"internalType": "address",
-					"name": "_snowflakeAddress",
-					"type": "address"
-				}
-			],
-			"name": "setSnowflakeAddress",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
 			"constant": true,
 			"inputs": [],
-			"name": "snowflakeAddress",
+			"name": "callOnAddition",
 			"outputs": [
 				{
-					"internalType": "address",
 					"name": "",
-					"type": "address"
+					"type": "bool"
 				}
 			],
 			"payable": false,
@@ -272,7 +88,6 @@
 			"name": "snowflakeDescription",
 			"outputs": [
 				{
-					"internalType": "string",
 					"name": "",
 					"type": "string"
 				}
@@ -287,9 +102,50 @@
 			"name": "snowflakeName",
 			"outputs": [
 				{
-					"internalType": "string",
 					"name": "",
 					"type": "string"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "owner",
+			"outputs": [
+				{
+					"name": "",
+					"type": "address"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "callOnRemoval",
+			"outputs": [
+				{
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "isOwner",
+			"outputs": [
+				{
+					"name": "",
+					"type": "bool"
 				}
 			],
 			"payable": false,
@@ -300,7 +156,70 @@
 			"constant": false,
 			"inputs": [
 				{
-					"internalType": "address",
+					"name": "ein",
+					"type": "uint256"
+				},
+				{
+					"name": "allowance",
+					"type": "uint256"
+				},
+				{
+					"name": "extraData",
+					"type": "bytes"
+				}
+			],
+			"name": "onAddition",
+			"outputs": [
+				{
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "ein",
+					"type": "uint256"
+				},
+				{
+					"name": "extraData",
+					"type": "bytes"
+				}
+			],
+			"name": "onRemoval",
+			"outputs": [
+				{
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "_snowflakeAddress",
+					"type": "address"
+				}
+			],
+			"name": "setSnowflakeAddress",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
 					"name": "newOwner",
 					"type": "address"
 				}
@@ -310,6 +229,64 @@
 			"payable": false,
 			"stateMutability": "nonpayable",
 			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "snowflakeAddress",
+			"outputs": [
+				{
+					"name": "",
+					"type": "address"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"name": "_snowflakeName",
+					"type": "string"
+				},
+				{
+					"name": "_snowflakeDescription",
+					"type": "string"
+				},
+				{
+					"name": "_snowflakeAddress",
+					"type": "address"
+				},
+				{
+					"name": "_callOnAddition",
+					"type": "bool"
+				},
+				{
+					"name": "_callOnRemoval",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "constructor"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"name": "previousOwner",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "OwnershipTransferred",
+			"type": "event"
 		}
 	]
 }

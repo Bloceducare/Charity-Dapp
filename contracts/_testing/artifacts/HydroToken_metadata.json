@@ -1,150 +1,18 @@
 {
 	"compiler": {
-		"version": "0.5.17+commit.d19bba13"
+		"version": "0.5.0+commit.1d4f565a"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
+				"constant": true,
 				"inputs": [],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "_owner",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "_spender",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
-				"name": "Approval",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "_burner",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
-				"name": "Burn",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "previousOwner",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "newOwner",
-						"type": "address"
-					}
-				],
-				"name": "OwnershipTransferred",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "_from",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "_to",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
-				"name": "Transfer",
-				"type": "event"
-			},
-			{
-				"constant": true,
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_owner",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_spender",
-						"type": "address"
-					}
-				],
-				"name": "allowance",
+				"name": "raindropAddress",
 				"outputs": [
 					{
-						"internalType": "uint256",
-						"name": "remaining",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [
-					{
-						"internalType": "address",
 						"name": "",
 						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "allowed",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
 					}
 				],
 				"payable": false,
@@ -155,74 +23,14 @@
 				"constant": false,
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_spender",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
-				"name": "approve",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "success",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_spender",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
 						"name": "_value",
 						"type": "uint256"
 					},
 					{
-						"internalType": "bytes",
-						"name": "_extraData",
-						"type": "bytes"
-					}
-				],
-				"name": "approveAndCall",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "success",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_value",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
 						"name": "_challenge",
 						"type": "uint256"
 					},
 					{
-						"internalType": "uint256",
 						"name": "_partnerId",
 						"type": "uint256"
 					}
@@ -235,19 +43,12 @@
 			},
 			{
 				"constant": true,
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_owner",
-						"type": "address"
-					}
-				],
-				"name": "balanceOf",
+				"inputs": [],
+				"name": "name",
 				"outputs": [
 					{
-						"internalType": "uint256",
-						"name": "balance",
-						"type": "uint256"
+						"name": "",
+						"type": "string"
 					}
 				],
 				"payable": false,
@@ -255,18 +56,34 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
+				"constant": false,
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "",
+						"name": "spender",
 						"type": "address"
+					},
+					{
+						"name": "amount",
+						"type": "uint256"
 					}
 				],
-				"name": "balances",
+				"name": "approve",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
 						"name": "",
 						"type": "uint256"
 					}
@@ -279,13 +96,25 @@
 				"constant": false,
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "_value",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"name": "burn",
-				"outputs": [],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
 				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -296,7 +125,6 @@
 				"name": "decimals",
 				"outputs": [
 					{
-						"internalType": "uint8",
 						"name": "",
 						"type": "uint8"
 					}
@@ -306,59 +134,60 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "isOwner",
+				"constant": false,
+				"inputs": [
+					{
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"name": "addedValue",
+						"type": "uint256"
+					}
+				],
+				"name": "increaseAllowance",
 				"outputs": [
 					{
-						"internalType": "bool",
 						"name": "",
 						"type": "bool"
 					}
 				],
 				"payable": false,
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "name",
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
 				"outputs": [
 					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
+						"name": "burnAmount",
+						"type": "uint256"
 					}
 				],
 				"payable": false,
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"constant": true,
-				"inputs": [],
-				"name": "owner",
-				"outputs": [
+				"inputs": [
 					{
-						"internalType": "address",
-						"name": "",
+						"name": "account",
 						"type": "address"
 					}
 				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "raindropAddress",
+				"name": "balanceOf",
 				"outputs": [
 					{
-						"internalType": "address",
 						"name": "",
-						"type": "address"
+						"type": "uint256"
 					}
 				],
 				"payable": false,
@@ -375,21 +204,62 @@
 				"type": "function"
 			},
 			{
+				"constant": true,
+				"inputs": [],
+				"name": "getOwner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"constant": false,
 				"inputs": [
 					{
-						"internalType": "address[]",
-						"name": "_addressList",
-						"type": "address[]"
-					},
-					{
-						"internalType": "uint256[]",
-						"name": "_amounts",
-						"type": "uint256[]"
+						"name": "amount",
+						"type": "uint256"
 					}
 				],
-				"name": "setBalances",
-				"outputs": [],
+				"name": "mint",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
 				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -398,7 +268,52 @@
 				"constant": false,
 				"inputs": [
 					{
-						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"name": "subtractedValue",
+						"type": "uint256"
+					}
+				],
+				"name": "decreaseAllowance",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
 						"name": "_raindrop",
 						"type": "address"
 					}
@@ -410,14 +325,40 @@
 				"type": "function"
 			},
 			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_addressList",
+						"type": "address[]"
+					},
+					{
+						"name": "_amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "setBalances",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"constant": true,
-				"inputs": [],
-				"name": "symbol",
+				"inputs": [
+					{
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
 				"outputs": [
 					{
-						"internalType": "string",
 						"name": "",
-						"type": "string"
+						"type": "uint256"
 					}
 				],
 				"payable": false,
@@ -425,82 +366,9 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "totalSupply",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"constant": false,
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_to",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
-				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "success",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_from",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_to",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
-				"name": "transferFrom",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "success",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"internalType": "address",
 						"name": "newOwner",
 						"type": "address"
 					}
@@ -510,110 +378,148 @@
 				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
 			}
 		],
 		"devdoc": {
 			"methods": {
 				"allowance(address,address)": {
-					"details": "This function makes it easy to read the `allowed[]` map",
-					"params": {
-						"_owner": "The address of the account that owns the token",
-						"_spender": "The address of the account able to transfer the tokens"
-					},
-					"return": "Amount of remaining tokens of _owner that _spender is allowed  to spend"
+					"details": "See {BEP20-allowance}."
 				},
 				"approve(address,uint256)": {
-					"params": {
-						"_amount": "The amount of tokens to be approved for transfer",
-						"_spender": "The address of the account able to transfer the tokens"
-					},
-					"return": "True if the approval was successful"
+					"details": "See {BEP20-approve}.   * Requirements:   * - `spender` cannot be the zero address."
 				},
 				"balanceOf(address)": {
-					"return": "The balance of `_owner`"
+					"details": "See {BEP20-balanceOf}."
 				},
-				"isOwner()": {
-					"return": "true if `msg.sender` is the owner of the contract."
+				"decimals()": {
+					"details": "Returns the token decimals."
+				},
+				"decreaseAllowance(address,uint256)": {
+					"details": "Atomically decreases the allowance granted to `spender` by the caller.   * This is an alternative to {approve} that can be used as a mitigation for problems described in {BEP20-approve}.   * Emits an {Approval} event indicating the updated allowance.   * Requirements:   * - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`."
+				},
+				"getOwner()": {
+					"details": "Returns the bep token owner."
+				},
+				"increaseAllowance(address,uint256)": {
+					"details": "Atomically increases the allowance granted to `spender` by the caller.   * This is an alternative to {approve} that can be used as a mitigation for problems described in {BEP20-approve}.   * Emits an {Approval} event indicating the updated allowance.   * Requirements:   * - `spender` cannot be the zero address."
+				},
+				"mint(uint256)": {
+					"details": "Creates `amount` tokens and assigns them to `msg.sender`, increasing the total supply.   * Requirements   * - `msg.sender` must be the token owner"
+				},
+				"name()": {
+					"details": "Returns the token name."
 				},
 				"owner()": {
-					"return": "the address of the owner."
+					"details": "Returns the address of the current owner."
 				},
 				"renounceOwnership()": {
-					"details": "Allows the current owner to relinquish control of the contract."
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.   * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"symbol()": {
+					"details": "Returns the token symbol."
+				},
+				"totalSupply()": {
+					"details": "See {BEP20-totalSupply}."
 				},
 				"transfer(address,uint256)": {
-					"params": {
-						"_amount": "The amount of tokens to be transferred",
-						"_to": "The address of the recipient"
-					},
-					"return": "Whether the transfer was successful or not"
+					"details": "See {BEP20-transfer}.   * Requirements:   * - `recipient` cannot be the zero address. - the caller must have a balance of at least `amount`."
 				},
 				"transferFrom(address,address,uint256)": {
-					"params": {
-						"_amount": "The amount of tokens to be transferred",
-						"_from": "The address holding the tokens being transferred",
-						"_to": "The address of the recipient"
-					},
-					"return": "True if the transfer was successful"
+					"details": "See {BEP20-transferFrom}.   * Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {BEP20};   * Requirements: - `sender` and `recipient` cannot be the zero address. - `sender` must have a balance of at least `amount`. - the caller must have allowance for `sender`'s tokens of at least `amount`."
 				},
 				"transferOwnership(address)": {
-					"details": "Allows the current owner to transfer control of the contract to a newOwner.",
-					"params": {
-						"newOwner": "The address to transfer ownership to."
-					}
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
 				}
 			}
 		},
 		"userdoc": {
-			"methods": {
-				"approve(address,uint256)": {
-					"notice": "`msg.sender` approves `_spender` to spend `_amount` tokens on  its behalf. This is a modified version of the ERC20 approve function  to be a little bit safer"
-				},
-				"constructor": "/////////////Constructor to create a HydroToken",
-				"renounceOwnership()": {
-					"notice": "Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore."
-				},
-				"transfer(address,uint256)": {
-					"notice": "////////////////Send `_amount` tokens to `_to` from `msg.sender`"
-				},
-				"transferFrom(address,address,uint256)": {
-					"notice": "Send `_amount` tokens to `_to` from `_from` on the condition it  is approved by `_from`"
-				}
-			}
+			"methods": {}
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/_testing/HydroToken.sol": "HydroToken"
+			"localhost/../Charity/contracts/_testing/HydroToken.sol": "HydroToken"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "byzantium",
 		"libraries": {},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"localhost/contracts/_testing/HydroToken.sol": {
-			"keccak256": "0x7bef36a069e43ef1fb8087a4f8383b29e483b4a2dd1eec2d22a2d01b18bf2622",
+		"localhost/../Charity/contracts/_testing/HydroToken.sol": {
+			"keccak256": "0x8ce043b45d3df29da51bd0d8de2f4ae01dc450f814d16d816e5fb9177d4a1687",
 			"urls": [
-				"bzz-raw://bb0dd555728a4f121e791548efddb7cbedbfb140013e029ddbed4f59114bc8a7",
-				"dweb:/ipfs/QmYv65eYejNFDdfAtgMVYSCZorgUzvUMUBzV4quwmMBGCV"
-			]
-		},
-		"localhost/contracts/zeppelin/math/SafeMath.sol": {
-			"keccak256": "0x2cee2f0a5f7c68ece40aa1641b34177859058b4b3d74f243112c96f0bff7d54b",
-			"urls": [
-				"bzz-raw://f2b0cad26ec863f3772bbebd99460df0d96c57eaf486e195ea402a2542d6d515",
-				"dweb:/ipfs/QmXQTSLmasfkBa5ttJeWMAGedKTV1ZErhMLkkBCJDhWHbz"
-			]
-		},
-		"localhost/contracts/zeppelin/ownership/Ownable.sol": {
-			"keccak256": "0x1fbe7f67d6b8ac1f5aff86a9da41833273e073c47ce1e160f9addd9c64d9ff1d",
-			"urls": [
-				"bzz-raw://93d3790757d1984cef393a056010cc4269002c1aa93d635fabc8f169ef0707e8",
-				"dweb:/ipfs/QmdSDJUXB5vEXud6BJGc6TSQMBG8trJ4ZYH2onq39taBKa"
+				"bzzr://7bd6f475d724e7a181c7d2fa75f6f172a3a5dd1c227b32c067c995d5df1290c3"
 			]
 		}
 	},

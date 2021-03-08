@@ -52,22 +52,18 @@
 			"constant": false,
 			"inputs": [
 				{
-					"internalType": "address",
 					"name": "_from",
 					"type": "address"
 				},
 				{
-					"internalType": "uint256",
 					"name": "_value",
 					"type": "uint256"
 				},
 				{
-					"internalType": "address",
 					"name": "_token",
 					"type": "address"
 				},
 				{
-					"internalType": "bytes",
 					"name": "_extraData",
 					"type": "bytes"
 				}
